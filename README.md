@@ -1,0 +1,2 @@
+# dicionariomanezes
+Dicionário Manezes - Português
