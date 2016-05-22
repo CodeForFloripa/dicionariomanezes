@@ -29,15 +29,15 @@ reuniões.
 5. Gerando app para Android
 
 ### Sugestões para contribuições
-[ ] [Fonética dos verbetes](https://pt.m.wikipedia.org/wiki/Alfabeto_fon%C3%A9tico_internacional)
-[ ] Áudio dos verbetes
-[ ] Jogos
-[ ] Cartões de Memorização
-[ ] Categorização de verbetes
-[ ] Melhorias de design
-[ ] Sugestão de novos verbetes por parte de usuários
-[ ] Favoritar verbetes
-[ ] .....
+- [ ] [Fonética dos  verbetes](https://pt.m.wikipedia.org/wiki/Alfabeto_fon%C3%A9tico_internacional)
+- [ ] Áudio dos verbetes
+- [ ] Jogos
+- [ ] Cartões de Memorização
+- [ ] Categorização de verbetes
+- [ ] Melhorias de design
+- [ ] Sugestão de novos verbetes por parte de usuários
+- [ ] Favoritar verbetes
+- [ ] .....
 
 # O que é o Code For Floripa
 
