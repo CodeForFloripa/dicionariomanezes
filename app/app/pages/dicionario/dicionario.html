@@ -1,0 +1,18 @@
+<ion-navbar *navbar>
+  <!-- <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button> -->
+  <ion-title>Dicionário</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let v of verbetes" (click)="itemTapped($event, item)">
+      {{v.verbete}}
+    </button>
+  </ion-list>
+
+  <!-- <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div> -->
+</ion-content>

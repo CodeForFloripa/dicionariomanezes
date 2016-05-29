@@ -1,19 +1,21 @@
 import {ViewChild} from '@angular/core';
 import {App, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
+import {DicionarioPage} from './pages/dicionario/dicionario.page.ts';
+import {DicionarioService} from './dicionario/dicionario.service.ts';
 import {ListPage} from './pages/list/list';
 
 
 @App({
   templateUrl: 'build/app.html',
-  config: {} // http://ionicframework.com/docs/v2/api/config/Config/
+  config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
+  providers: [[DicionarioService]]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  rootPage: any = DicionarioPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -24,8 +26,7 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Dicionário', component: DicionarioPage }
     ];
   }
 
