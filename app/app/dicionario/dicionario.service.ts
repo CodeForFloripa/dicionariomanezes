@@ -31,9 +31,10 @@ export class DicionarioService {
   }
 
   verbetesComecandoComLetra(letra: string): Observable<Verbete[]> {
+    var s = letra.toLowerCase();
     return this.carregaVerbetes()
       .flatMap(vs => Observable.from(vs))
-      .filter(v => v.verbete.toLowerCase().startsWith(letra))
+      .filter(v => v.verbete.toLowerCase().startsWith(s))
       .toArray()
   }
 

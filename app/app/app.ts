@@ -1,9 +1,10 @@
 import {ViewChild} from '@angular/core';
 import {App, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {DicionarioPage} from './pages/dicionario/dicionario.page.ts';
+import {DicionarioPage} from './pages/dicionario/dicionario.ts';
+import {ListaVerbetesPage} from './pages/lista-verbetes/lista-verbetes.ts';
+import {VerbetePage} from './pages/verbete/verbete.ts';
 import {DicionarioService} from './dicionario/dicionario.service.ts';
-import {ListPage} from './pages/list/list';
 
 
 @App({
@@ -26,7 +27,9 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Dicionário', component: DicionarioPage }
+      { title: 'Dicionário', component: DicionarioPage },
+      { title: 'Dicionário a', component: ListaVerbetesPage },
+      { title: 'Dicionário b', component: VerbetePage },
     ];
   }
 

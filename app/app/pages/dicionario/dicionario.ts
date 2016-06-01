@@ -1,5 +1,5 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
-import {ItemDetailsPage} from '../item-details/item-details';
+import {ListaVerbetesPage} from '../lista-verbetes/lista-verbetes';
 import {Verbete} from '../../dicionario/verbete';
 import {DicionarioService} from '../../dicionario/dicionario.service.ts';
 
@@ -7,24 +7,19 @@ import {DicionarioService} from '../../dicionario/dicionario.service.ts';
   templateUrl: 'build/pages/dicionario/dicionario.html'
 })
 export class DicionarioPage {
-  selectedItem: any;
-  verbetes: Verbete[];
+
+  public letras: string[]
 
   constructor(private nav: NavController, navParams: NavParams, dicionarioService: DicionarioService) {
     // If we navigated to this page, we will have an item available as a nav param
 
-    dicionarioService.verbetesComecandoComLetra("a")
-      .subscribe(vs => this.update(vs));
-
+    this.letras = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    console.log(this.letras);
   }
 
-  update(vs:Verbete[]) {
-    this.verbetes = vs;
-  }
-
-  itemTapped(event, item) {
-    // this.nav.push(ItemDetailsPage, {
-    //   item: item
-    // });
+  letraSelecionada(event, item) {
+    this.nav.push(ListaVerbetesPage, {
+      letra: item
+    });
   }
 }
