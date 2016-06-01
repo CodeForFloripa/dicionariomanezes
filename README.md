@@ -10,25 +10,31 @@ O *DicioMané* é uma tentativa de divulgar o manezês de forma fácil e diverti
 O sistema ainda está em desenvolvimento, logo estará disponível para todas as
 plataformas.
 
+
+
 ## Contribuindo
 
-Para contribuir com melhorias que envolvam código, crie um fork desse repositório, implemente as mudanças e crie um Pull Request. Para contribuir de outras formas
-(sugestão de design, novos verbetes, sugestões de funcionalidades), entre em contato com a organização do Code For Floripa, ou nos visite em uma de nossas
-reuniões.
+### Instalando NodeJS/ionic
 
-### Preparando o Ambiente
+1. Instale o [Node Version Manager](https://github.com/creationix/nvm)
+2. Instale a última versão do node (6.x)
+3. Instale ionic: `npm install -g ionic`
 
-1. Instalando Node
+### Clone o projeto
+1. `git clone https://github.com/CodeForFloripa/dicionariomanezes.git`
+2. `cd dicionariomanezes/app`
+3. `npm install`
+4. `ionic serve` Isso deve abrir uma janela no browser com o app
+5. Se quiser rodar no device: `ionic run android --device`
 
-2. Instalando Ionic / Angular
+### Contribuindo com código
+Crie um fork do projeto, e uma branch que descreve a sua melhoria (`feature--nova-feature` ou `bugfix--algum-bug`). **[Ao finalizar crie um pull request](https://help.github.com/articles/creating-a-pull-request/)** para analizarmos o código.
 
-3. Clonando o repositório
+### Contribuindo com ideias ou bugs
+Se você tem alguma ideia ou encontrou algum bug, mas não sabe programar, **[crie uma issue](https://github.com/CodeForFloripa/dicionariomanezes/issues)**.
 
-4. Rodando o site localmente
 
-5. Gerando app para Android
-
-### Sugestões para contribuições
+### Sugestões para contribuições a serem implementadas
 - [ ] [Fonética dos  verbetes](https://pt.m.wikipedia.org/wiki/Alfabeto_fon%C3%A9tico_internacional)
 - [ ] Áudio dos verbetes
 - [ ] Jogos
