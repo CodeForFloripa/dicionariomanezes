@@ -1,32 +1,49 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
-import {ItemDetailsPage} from '../item-details/item-details';
+import {Page, NavController, NavParams, Toast} from 'ionic-angular';
 import {Verbete} from '../../dicionario/verbete';
 import {DicionarioService} from '../../dicionario/dicionario.service.ts';
 import {VerbetePage} from '../verbete/verbete';
+import {NgZone,ChangeDetectorRef, Input, Component} from '@angular/core';
+
+
+
 
 @Page({
-  templateUrl: 'build/pages/lista-verbetes/lista-verbetes.html'
+  templateUrl: 'build/pages/lista-verbetes/lista-verbetes.page.html'
 })
 export class ListaVerbetesPage {
-  selectedItem: any;
   verbetes: Verbete[];
+  err: string
 
   constructor(private nav: NavController, navParams: NavParams, dicionarioService: DicionarioService) {
-    // If we navigated to this page, we will have an item available as a nav param
-    console.log(navParams.get("letra"));
-    dicionarioService.verbetesComecandoComLetra(navParams.get("letra"))
-      .subscribe(vs => this.update(vs));
 
+    // Chamada assícrona para atualização dos dados
+    dicionarioService
+      .verbetesComecandoComLetra(navParams.get("letra"))
+      .subscribe(vs => this.verbetes = vs);
   }
 
-  update(vs:Verbete[]) {
-    this.verbetes = vs;
-  }
 
+  /**
+   * Callback para a seleção de itens
+   */
   verbeteSelecionado(event, item) {
-    console.log(item);
+    /* Iniciando uma nova página */
     this.nav.push(VerbetePage, {
       verbete: item
     });
+  }
+
+  /**
+   * Mostra uma mensagem na tela
+   * @param  {string} message [description]
+   * @return {[type]}         [description]
+   */
+  showToast(message: string) {
+    let toast = Toast.create({
+      message: message,
+      duration: 3000
+    });
+
+    this.nav.present(toast)
   }
 }

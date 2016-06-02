@@ -7,11 +7,11 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of verbetes" (click)="verbeteSelecionado($event, item)">
+    <button ion-item *ngFor="let item of verbetes" (click)="verbeteSelecionado($event, item)" class="item-verbete">
       {{item.verbete}}
     </button>
-  </ion-list>
 
+  </ion-list>
   <!-- <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
   </div> -->

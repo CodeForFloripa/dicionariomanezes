@@ -11,12 +11,15 @@ export class DicionarioPage {
   public letras: string[]
 
   constructor(private nav: NavController, navParams: NavParams, dicionarioService: DicionarioService) {
-    // If we navigated to this page, we will have an item available as a nav param
 
+    // Letras para serem mostradas. Não precisamos atualizar a view, isso eh feito
+    // automagicamente
     this.letras = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-    console.log(this.letras);
   }
 
+  /**
+   * Callback para a seleção de uma letra
+   */
   letraSelecionada(event, item) {
     this.nav.push(ListaVerbetesPage, {
       letra: item
