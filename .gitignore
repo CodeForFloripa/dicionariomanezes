@@ -8,3 +8,4 @@ app/www/lib
 **/*.swp
 **/.DS_Store
 **/Thumbs.db
+**/*.log
