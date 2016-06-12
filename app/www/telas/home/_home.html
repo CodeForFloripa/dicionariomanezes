@@ -1,5 +1,33 @@
-<ion-view view-title="Home">
-  <ion-content>
-    <h1>Home</h1>
-  </ion-content>
-</ion-view>
+
+  <!-- where the initial view template will be rendered -->
+  <ion-view view-title="DicioMané" ng-controller="HomeCtrl as hc" tela="Home">
+    <!-- <ion-nav-title>
+      <img src="logo.svg">
+    </ion-nav-title> -->
+    <ion-content>
+      <md-card>
+        <md-card-header>
+          <md-card-header-text> Palavra do Dia </md-card-header-text>
+        </md-card-header>
+
+        <md-card-title>
+          <md-card-title-text> <h2>{{hc.verbete.verbete}}</h2> </md-card-title-text>
+        </md-card-title>
+
+        <md-card-content>
+          {{hc.verbete.significado}}
+          <br />
+          {{hc.verbete.fonte}}
+        </md-card-content>
+
+        <md-card-actions  layout="row" layout-align="end center">
+          <md-button ng-click="hc.irParaVerbete(hc.verbete)">Ler Mais</md-button>
+        <md-card-actions>
+
+      </md-card>
+
+      <md-button class="md-raised md-primary" ng-click="hc.irParaDicionario()">Dicionário</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.irParaBusca()">Busca</md-button>
+
+    </ion-content>
+  </ion-view>

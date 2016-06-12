@@ -14,7 +14,7 @@ Se você quer contribuir colocando a mão na massa, mas ainda não sabe programa
 ### Instalando NodeJS/ionic
 
 1. Instale o [Node Version Manager](https://github.com/creationix/nvm)
-2. Instale a última versão do node (6.x)
+2. Instale a última versão do node **5.x**
 3. Instale ionic: `npm install -g ionic`
 
 ### Clone o projeto

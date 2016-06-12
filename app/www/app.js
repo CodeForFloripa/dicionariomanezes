@@ -9,7 +9,8 @@ angular.module('diciomane', ['ionic',
   'diciomane.telas.busca',
   'diciomane.telas.dicionario',
   'diciomane.telas.home',
-  'diciomane.svc.dicionario'])
+  'diciomane.svc.dicionario',
+  'ngMaterial'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -36,7 +37,7 @@ angular.module('diciomane', ['ionic',
     templateUrl: 'telas/home/_home.html'
   })
   .state('verbete', {
-    url: '/verbete',
+    url: '/verbete/:id',
     templateUrl: 'telas/verbete/_verbete.html'
   })
   .state('dicionario', {
