@@ -30,14 +30,9 @@ codeforfloripa@gmail.com
 
 Nossos canais de comunicação
 
-[Slack](https://codeforfloripa.slack.com/) (principal)
-
-[Twitter](https://twitter.com/CodeForFloripa)
-
-[Github](https://github.com/CodeForFloripa)
-
-[Facebook](https://www.facebook.com/CodeForFloripa/?fref=ts)
-
+[Slack](https://codeforfloripa.slack.com/) (principal) |  [Twitter](https://twitter.com/CodeForFloripa) |
+[Github](https://github.com/CodeForFloripa) | 
+[Facebook](https://www.facebook.com/CodeForFloripa/?fref=ts) |
 [Meetup](http://www.meetup.com/pt-BR/Code-For-Floripa-Meetup/)
 
 Para saber mais...
