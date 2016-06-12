@@ -15,7 +15,9 @@ Todo o código do Code For Floripa é open source e qualquer um pode contribuir.
 
 # O que é o Code For Floripa
 
-![Alt text](/doc-img/logo.png) O Code for Floripa é uma versão oficial do **Code for America** destinada aos manezinhos. O **Code for America** é uma iniciativa que surgiu em 2009 nos Estados Unidos, que busca conectar os cidadões através da tecnologia, em prol de melhorias das cidades ao redor da América de forma voluntária e sem fins lucrativos.
+![Alt text](/doc-img/logo.png)
+
+ O Code for Floripa é uma versão oficial do **Code for America** destinada aos manezinhos. O **Code for America** é uma iniciativa que surgiu em 2009 nos Estados Unidos, que busca conectar os cidadões através da tecnologia, em prol de melhorias das cidades ao redor da América de forma voluntária e sem fins lucrativos.
 
 O objetivo é desenvolver aplicativos gratuítos que ofereçam serviços simples, eficazes e fáceis de usar. Acreditamos que não vamos melhorar os governos sem antes melhorar a cidadania e pra isso precisamos ser mais que vozes e votos, temos que ser mãos que trabalham.
 
