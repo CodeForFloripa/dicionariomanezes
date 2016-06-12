@@ -1,8 +1,22 @@
 [tela=Home] {
 
-  .md-raised {
-    display: block;
+  ion-content {
+    padding: 8px;
+  }
+  button {
     width: 100%;
+    margin: 0 0 8px;
+  }
+
+  md-card {
+    margin: 0 0 8px;
+  }
+
+  md-card-header {
+    background-color: $primary;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
 }

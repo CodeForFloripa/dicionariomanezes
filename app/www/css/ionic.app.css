@@ -9815,6 +9815,18 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-[tela=Home] .md-raised {
-  display: block;
-  width: 100%; }
+[tela=Home] ion-content {
+  padding: 8px; }
+
+[tela=Home] button {
+  width: 100%;
+  margin: 0 0 8px; }
+
+[tela=Home] md-card {
+  margin: 0 0 8px; }
+
+[tela=Home] md-card-header {
+  background-color: #3F51B5;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase; }
