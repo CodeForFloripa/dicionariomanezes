@@ -9,3 +9,4 @@ app/www/lib
 **/.DS_Store
 **/Thumbs.db
 **/*.log
+app/www/css

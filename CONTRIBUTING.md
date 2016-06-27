@@ -29,17 +29,38 @@ Se você quer contribuir colocando a mão na massa, mas ainda não sabe programa
 ### Contribuindo com código
 Crie um fork do projeto, e uma branch que descreve a sua melhoria (`feature--nova-feature` ou `bugfix--algum-bug`). **[Ao finalizar crie um pull request](https://help.github.com/articles/creating-a-pull-request/)** para analizarmos o código.
 
+#### Estrutura da aplicação
+
+No CodeForFloripa, dividimos as partes de nossa aplicação em 3 tipos: `Services`, `Components` e `Pages`.
+
+* *Services*: Funcionalidades sem interface, que rodam no background (acesso ao banco de dados, lógica de negócios, servidor)
+* *Pages*: Páginas da aplicação
+* *Components*: Elementos da interface que compõem a página (um botão especial, uma lista, etc).
+
+Cada um desses elementos fica localizado em sua pasta específica, dentro da pasta `www`. Ignore as outras pastas do projeto, a pasta `www` é a única pasta que importa para o desenvolvimento.
+
+![Estrutura do código](doc-img/structure.png)
+
+* `components`: Pasta onde ficam localizados os componentes do app. Cada componente possui sua pasta separada, que inclui um javascript e possivelmente um html e um css.
+* `css`: Ignore essa pasta (Leia abaixo)
+* `data`: Pasta onde ficam os dados usados pela aplicação (json, csv, etc..)
+* `img`: Imagens usadas no app. OBS: Caso a imagem seja utilizada apenas por um componente ou página, ela pode ser colocada na pasta desse componente ou página.
+* `pages`: Diretório onde ficam as páginas do app. Assim como componentes, cada página possui sua pasta onde fica o seu `js`, `html`, `css` e talvez imagens.
+* `services`: Diretório para os serviços. Cada serviço tem sua própria pasta.
+* `app.js`: Arquivo root para nossa aplicação, que cria o app em si. Aqui definimos configurações globais para o app, bem como as rotas para as páginas.
+* `index.html`: Página inicial da aplicação.
+* `ionic.app.css`: Estilo raiz da aplicação. Aqui definimos estilos que afetam todo o app (paleta de cores por exemplo) e quais scss queremos incluir no css final.
+
+**IMPORTANTE**
+> Nunca edite o conteúdo da pasta `css`. Todos os estilos devem ser definidos em seus específicos arquivos `scss`. Os arquivos css serão gerados automaticamente.
+
 #### Styleguide
 
 Para manter consistência de código, estipulamos algumas regras:
 
-1. Tentar usar variáveis/classes em português.
-2. Uma tela nova de nome *novatela* possui todo seu código em `app/www/telas/*novatela*`. O controlador fica em **novatela.js** e o template em **\_novatela.html**.
-3. Um componente de interface (ou diretiva), fica em `app/www/componentes/`, onde o controller fica em **novocomponente.js** e o template em **\_novotemplate.html**
-4. Serviços ficam em `app/www/components/services`
-5. Estilos são implementados usando SASS, e o estilo para uma tela em componente fica em **scss/\_componente.scss** ou **scss/\_tela.scss**
-6. SEMPRE IMPLEMENTAR TESTES
-
+1. Programar usando variáveis em inglês.
+2. Seguir SEMPRE a estrutura definida acima.
+3. Use espaços, não TAB.
 
 
 ### Sugestões para contribuições a serem implementadas
