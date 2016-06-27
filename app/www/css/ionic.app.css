@@ -9815,18 +9815,17 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-[tela=Home] ion-content {
-  padding: 8px; }
-
-[tela=Home] button {
-  width: 100%;
-  margin: 0 0 8px; }
-
-[tela=Home] md-card {
-  margin: 0 0 8px; }
-
-[tela=Home] md-card-header {
-  background-color: #3F51B5;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase; }
+[page=Home] {
+  background-color: #EEEEEE; }
+  [page=Home] ion-content {
+    padding: 8px; }
+  [page=Home] button {
+    width: 100%;
+    margin: 0 0 8px; }
+  [page=Home] md-card {
+    margin: 0 0 8px; }
+  [page=Home] md-card-header {
+    background-color: #3F51B5;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase; }

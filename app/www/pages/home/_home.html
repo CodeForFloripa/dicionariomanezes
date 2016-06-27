@@ -1,6 +1,6 @@
 
   <!-- where the initial view template will be rendered -->
-  <ion-view view-title="DicioMané" ng-controller="HomeCtrl as hc" tela="Home">
+  <ion-view view-title="DicioMané" ng-controller="HomeCtrl as hc" page="Home">
     <!-- <ion-nav-title>
       <img src="logo.svg">
     </ion-nav-title> -->
@@ -11,23 +11,23 @@
         </md-card-header>
 
         <md-card-title>
-          <md-card-title-text> <h2>{{hc.verbete.verbete}}</h2> </md-card-title-text>
+          <md-card-title-text> <h2>{{hc.entry.entry}}</h2> </md-card-title-text>
         </md-card-title>
 
         <md-card-content>
-          {{hc.verbete.significado}}
+          {{hc.entry.meaning}}
           <br />
-          {{hc.verbete.fonte}}
+          {{hc.entry.source}}
         </md-card-content>
 
         <md-card-actions  layout="row" layout-align="end center">
-          <md-button ng-click="hc.irParaVerbete(hc.verbete)">Ler Mais</md-button>
+          <md-button ng-click="hc.openEntry(hc.entry)">Ler Mais</md-button>
         <md-card-actions>
 
       </md-card>
 
-      <md-button class="md-raised md-primary" ng-click="hc.irParaDicionario()">Dicionário</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.irParaBusca()">Busca</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openDictionary()">Dicionário</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openSearch()">Busca</md-button>
 
     </ion-content>
   </ion-view>

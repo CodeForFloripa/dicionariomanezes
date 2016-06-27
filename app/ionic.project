@@ -4,5 +4,6 @@
   "gulpStartupTasks": [
     "sass",
     "watch"
-  ]
+  ],
+  "watchPatterns": ["www/**/*", "!www/lib/**/*", "!www/config.codekit", "!www/**/*.scss"]
 }

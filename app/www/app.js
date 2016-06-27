@@ -5,11 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 angular.module('diciomane', ['ionic',
-  'diciomane.telas.verbete',
-  'diciomane.telas.busca',
-  'diciomane.telas.dicionario',
-  'diciomane.telas.home',
-  'diciomane.svc.dicionario',
+  'diciomane.pages.entry',
+  'diciomane.pages.search',
+  'diciomane.pages.dictionary',
+  'diciomane.pages.home',
+  'diciomane.svc.dictionary',
   'ngMaterial'])
 
 .run(function($ionicPlatform) {
@@ -34,19 +34,19 @@ angular.module('diciomane', ['ionic',
 
   .state('home', {
     url: '/home',
-    templateUrl: 'telas/home/_home.html'
+    templateUrl: 'pages/home/_home.html'
   })
-  .state('verbete', {
-    url: '/verbete/:id',
-    templateUrl: 'telas/verbete/_verbete.html'
+  .state('entry', {
+    url: '/entry/:id',
+    templateUrl: 'pages/entry/_entry.html'
   })
-  .state('dicionario', {
-    url: '/dicionario',
-    templateUrl: 'telas/dicionario/_dicionario.html'
+  .state('dictionary', {
+    url: '/dictionary',
+    templateUrl: 'pages/dictionary/_dictionary.html'
   })
-  .state('busca', {
-    url: '/busca',
-    templateUrl: 'telas/busca/_busca.html'
+  .state('search', {
+    url: '/search',
+    templateUrl: 'pages/search/_search.html'
   })
 
   // if none of the above states are matched, use this as the fallback
