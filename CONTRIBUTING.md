@@ -20,9 +20,11 @@ Se você quer contribuir colocando a mão na massa, mas ainda não sabe programa
 ### Clone o projeto
 1. `git clone https://github.com/CodeForFloripa/dicionariomanezes.git`
 2. `cd dicionariomanezes/app` (Nota: a Pasta app-ionic2 contém código para o app em Ionic 2, mas não está sendo utilizado no momento)
-3. `npm install`
-4. `ionic serve` Isso deve abrir uma janela no browser com o app
-5. Se quiser rodar no device: `ionic run android --device`
+3. `npm install -g ionic gulp bower`
+4. `npm install`
+5. `bower install`
+6. `ionic serve` Isso deve abrir uma janela no browser com o app
+7. Se quiser rodar no device: `ionic run android --device`
 
 ### Contribuindo com código
 Crie um fork do projeto, e uma branch que descreve a sua melhoria (`feature--nova-feature` ou `bugfix--algum-bug`). **[Ao finalizar crie um pull request](https://help.github.com/articles/creating-a-pull-request/)** para analizarmos o código.
