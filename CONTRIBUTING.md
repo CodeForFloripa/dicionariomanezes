@@ -8,7 +8,7 @@ Se você tem alguma ideia ou encontrou algum bug, mas não sabe programar, **[cr
 
 ## Contribuindo com programação
 
-Se você quer contribuir colocando a mão na massa, mas ainda não sabe programar, preparamos uma [lista de recursos interessantes](RESOURCES.md)
+Se você quer contribuir colocando a mão na massa, mas ainda não sabe programar, preparamos uma [lista de recursos interessantes](RESOURCES.md), além de alguns [tutorias simples](TUTORIAL.md)
 
 
 ### Instalando NodeJS/ionic
