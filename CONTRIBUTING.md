@@ -37,8 +37,10 @@ Antes de submeter sua alteração para aprovação, é obrigatório sincronizar 
 
 1. Adicione a referência ao `upstream`, como mostrado acima.
 2. Atualize sua versão do repo original: `git fetch upstream`
-3.2. Selecione a branch master `git checkout master`
-4. Sincronize `git merge upstream/master`
+3. Selecione a sua branch development `git checkout dev`
+4. Sincronize `git merge upstream/dev`
+
+> Nota: No desenvolvimento, usaremos apenas a branch development. A branch master contém a versão do aplicativo em produção.
 
 ### Criando um Pull Request
 
@@ -48,16 +50,13 @@ Para manter consitência e qualidade do código, adotamos o uso de Pull-Requests
 2. Clique em `Pull Request`
 3. Clique em `New Pull Request`
 4. Clique em `Compare Across Forks`
-5. Em `head fork`, selecione o seu fork do projeto, e a branch master
+5. Em `head fork`, selecione o seu fork do projeto, e a branch dev
 6. Clique em `Create Pull Request`
 7. Nos comentários, identifique a qual issue esse pull request pertence (caso exista)
 
 > **IMPORTANTE** caso hajo conflito de merge, o PR não será analizado. É obrigatório sincronizar o seu fork com o repo original antes de criar o pull request.
 
-### Contribuindo com código
-Crie um fork do projeto, e uma branch que descreve a sua melhoria (`feature--nova-feature` ou `bugfix--algum-bug`). **[Ao finalizar crie um pull request](https://help.github.com/articles/creating-a-pull-request/)** para analizarmos o código.
-
-#### Estrutura da aplicação
+### Estrutura da aplicação
 
 No CodeForFloripa, dividimos as partes de nossa aplicação em 3 tipos: `Services`, `Components` e `Pages`.
 
