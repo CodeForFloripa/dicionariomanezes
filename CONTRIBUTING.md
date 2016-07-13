@@ -17,14 +17,42 @@ Se você quer contribuir colocando a mão na massa, mas ainda não sabe programa
 2. Instale a última versão do node **5.x**
 3. Instale ionic: `npm install -g ionic`
 
-### Clone o projeto
-1. `git clone https://github.com/CodeForFloripa/dicionariomanezes.git`
-2. `cd dicionariomanezes/app` (Nota: a Pasta app-ionic2 contém código para o app em Ionic 2, mas não está sendo utilizado no momento)
+### Baixando e configurando o projeto
+
+1. Acesse [O site do repositório](https://github.com/CodeForFloripa/dicionariomanezes)
+2. Clique em `fork` para criar um fork do repositório para o seu usuário
+3. Clone seu projeto `git clone https://github.com/**SEUUSUARIO**/dicionariomanezes.git`
+4. Entre na pasta para onde o projeto foi clonado: `cd dicionariomanezes`
+5. Adicione como o repositório original como `upstream`, para que possamos manter sincronia entre eles: `git remote add upstream https://github.com/CodeForFloripa/dicionariomanezes.git`
+2. `cd app`
 3. `npm install -g ionic gulp bower`
 4. `npm install`
 5. `bower install`
 6. `ionic serve` Isso deve abrir uma janela no browser com o app
 7. Se quiser rodar no device: `ionic run android --device`
+
+### Sincronizando com o repositório original
+
+Antes de submeter sua alteração para aprovação, é obrigatório sincronizar o seu repositório com o repositório original. Para isso, basta seguir os seguintes passos (Retirados [daqui](https://help.github.com/articles/syncing-a-fork/)):
+
+1. Adicione a referência ao `upstream`, como mostrado acima.
+2. Atualize sua versão do repo original: `git fetch upstream`
+3.2. Selecione a branch master `git checkout master`
+4. Sincronize `git merge upstream/master`
+
+### Criando um Pull Request
+
+Para manter consitência e qualidade do código, adotamos o uso de Pull-Requests. Após ter finalizado suas modificações, solucionado o problema de uma das issues e atualizado o seu repositório para que contenha todas as mudanças que ocorreram no master, você pode criar um Pull Request para que analizemos as modificações e adicionemos o código ao repositório:
+
+1. Acesse [O site do repositório](https://github.com/CodeForFloripa/dicionariomanezes)
+2. Clique em `Pull Request`
+3. Clique em `New Pull Request`
+4. Clique em `Compare Across Forks`
+5. Em `head fork`, selecione o seu fork do projeto, e a branch master
+6. Clique em `Create Pull Request`
+7. Nos comentários, identifique a qual issue esse pull request pertence (caso exista)
+
+> **IMPORTANTE** caso hajo conflito de merge, o PR não será analizado. É obrigatório sincronizar o seu fork com o repo original antes de criar o pull request.
 
 ### Contribuindo com código
 Crie um fork do projeto, e uma branch que descreve a sua melhoria (`feature--nova-feature` ou `bugfix--algum-bug`). **[Ao finalizar crie um pull request](https://help.github.com/articles/creating-a-pull-request/)** para analizarmos o código.
