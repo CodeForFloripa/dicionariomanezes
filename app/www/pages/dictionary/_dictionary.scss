@@ -1,9 +1,39 @@
 [page=Dictionary] {
-  .scroll {
-  }
 
   #entries-list {
     margin-right: 60px;
+
+    .entry {
+
+      margin-top: 8px;
+      padding-bottom: 16px;
+
+      border-bottom: 1px solid #CCC;
+
+
+
+      div {
+        display: block;
+      }
+
+      .title {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+
+      .meaning {
+        line-height: 20px;
+        display: block;
+        word-wrap: normal;
+        text-align: justify;
+        color: #AAA;
+
+      }
+    }
+
+
   }
 
   #letter-picker {

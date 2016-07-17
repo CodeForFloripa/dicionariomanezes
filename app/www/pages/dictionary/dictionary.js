@@ -9,6 +9,7 @@ angular.module('diciomane.pages.dictionary',[])
     ctrl.letters = "abcdefghijklmnopqrstuvwxyz".split('')
 
     ctrl.reloadEntries =  function(letter) {
+      ctrl.letter = letter;
       dictionary.startsWith(letter).then(function(w){
         ctrl.words = w;
       })

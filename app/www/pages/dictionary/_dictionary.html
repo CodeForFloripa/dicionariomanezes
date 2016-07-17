@@ -1,15 +1,18 @@
-<ion-view view-title="Dicionario" page="Dictionary" ng-controller="DictionaryCtrl as dc">
+<ion-view view-title="Dicionário: {{dc.letter | uppercase}}" page="Dictionary" ng-controller="DictionaryCtrl as dc">
   <ion-content>
-    <ion-list id="entries-list">
+    <md-list id="entries-list">
 
-      <ion-item
+      <md-list-item
         ng-repeat="e in dc.words track by $index"
         ng-click="dc.openEntry(e)"
+        class="entry"
         >
-        {{e.entry}}
-      </ion-item>
+        <div class="title">{{e.entry}}</div>
+        <div class="meaning">{{e.meaning | limitTo: 80}}</div>
 
-    </ion-list>
+      </md-list-item>
+
+    </md-list>
 
   </ion-content>
 
@@ -17,7 +20,7 @@
     <ion-item ng-repeat="l in dc.letters track by $index"
       ng-click="dc.reloadEntries(l)"
       >
-      <span>{{l | uppercase}}</span>
+      <span md-ripple>{{l | uppercase}}</span>
     </ion-item>
   </ion-list>
 </ion-view>

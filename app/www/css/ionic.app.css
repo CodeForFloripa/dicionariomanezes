@@ -9832,6 +9832,23 @@ a.button {
 
 [page=Dictionary] #entries-list {
   margin-right: 60px; }
+  [page=Dictionary] #entries-list .entry {
+    margin-top: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #CCC; }
+    [page=Dictionary] #entries-list .entry div {
+      display: block; }
+    [page=Dictionary] #entries-list .entry .title {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: bold;
+      margin-bottom: 4px; }
+    [page=Dictionary] #entries-list .entry .meaning {
+      line-height: 20px;
+      display: block;
+      word-wrap: normal;
+      text-align: justify;
+      color: #AAA; }
 
 [page=Dictionary] #letter-picker {
   position: absolute;
