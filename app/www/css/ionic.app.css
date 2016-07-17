@@ -9829,3 +9829,27 @@ a.button {
     color: white;
     font-weight: bold;
     text-transform: uppercase; }
+
+[page=Dictionary] #entries-list {
+  margin-right: 60px; }
+
+[page=Dictionary] #letter-picker {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  overflow-y: scroll; }
+  [page=Dictionary] #letter-picker ion-item {
+    text-align: center;
+    border-width: 0px !important;
+    border-bottom-color: none;
+    padding: 4px; }
+    [page=Dictionary] #letter-picker ion-item span {
+      color: white;
+      display: block;
+      background-color: #3F51B5;
+      height: 48px;
+      width: 48px;
+      line-height: 48px;
+      border-radius: 50%; }
