@@ -9829,3 +9829,44 @@ a.button {
     color: white;
     font-weight: bold;
     text-transform: uppercase; }
+
+[page=Dictionary] #entries-list {
+  margin-right: 60px; }
+  [page=Dictionary] #entries-list .entry {
+    margin-top: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #CCC; }
+    [page=Dictionary] #entries-list .entry div {
+      display: block; }
+    [page=Dictionary] #entries-list .entry .title {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: bold;
+      margin-bottom: 4px; }
+    [page=Dictionary] #entries-list .entry .meaning {
+      line-height: 20px;
+      display: block;
+      word-wrap: normal;
+      text-align: justify;
+      color: #AAA; }
+
+[page=Dictionary] #letter-picker {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  overflow-y: scroll; }
+  [page=Dictionary] #letter-picker ion-item {
+    text-align: center;
+    border-width: 0px !important;
+    border-bottom-color: none;
+    padding: 4px; }
+    [page=Dictionary] #letter-picker ion-item span {
+      color: white;
+      display: block;
+      background-color: #3F51B5;
+      height: 48px;
+      width: 48px;
+      line-height: 48px;
+      border-radius: 50%; }
