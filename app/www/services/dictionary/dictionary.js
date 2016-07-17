@@ -28,7 +28,7 @@ angular.module('diciomane.svc.dictionary', [])
     function search(word) {
       return loadEntries().then(function(v) {
         word = word.toLowerCase();
-        return v.entries.filter(function(el){return (el.entry.toLowerCase().indexOf(word) > -1) || (el.meaning.toLowerCase().indexOf(word) > -1)})
+        return v.entries.filter(function(el){return ((el.entry+el.meaning).toLowerCase().indexOf(word) > -1)})
       });
     }
 
