@@ -21,6 +21,17 @@ angular.module('diciomane.svc.dictionary', [])
     }
 
     /**
+     * Finds entries that contains a substring (matches part of the entry)
+     * @param  {string} word
+     * @return {Promise<Array<Entry>>}
+     */
+    function search(word) {
+      return loadEntries().then(function(v) {
+        return v.entries.filter(function(el){return (el.entry.indexOf(word) > -1) || (el.meaning.indexOf(word) > -1)})
+      });
+    }
+
+    /**
      * Select all dictionary entries
      * @return {Promise<Array<Entry>>}
      */
@@ -66,6 +77,7 @@ angular.module('diciomane.svc.dictionary', [])
     return {
       allEntries: entries,
       startsWith: startsWith,
-      entry: entry
+      entry: entry,
+      search: search
     }
   }]);
