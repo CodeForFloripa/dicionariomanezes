@@ -5,13 +5,10 @@ angular.module('diciomane.pages.entry',[])
 
     var ctrl = this;
 
-    this.verbeteID = $stateParams.id;
-    dictionary.verbeteComID(this.entryID)
+    this.entryID = $stateParams.id;
+    dictionary.entry(this.entryID)
       .then(function(entry) {
         ctrl.entry = entry;
         console.log(ctrl)
       })
-
-
-
   }]);
