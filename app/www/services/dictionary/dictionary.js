@@ -1,13 +1,8 @@
 'use strict'
 angular.module('diciomane.svc.dictionary', [])
-  .service('DictionarySvc', ['$http', function($http) {
+  .service('DictionarySvc', ['$http', '$q', function($http, $q) {
 
-    /**
-     * List of dictionary entries
-     * @type {Array} of entries
-     */
-    var _entries = []
-    var _entryMap = {}
+    var _cached;
 
     /**
      * Finds entries that start with a specific letter
@@ -58,8 +53,13 @@ angular.module('diciomane.svc.dictionary', [])
      * @return {[type]} [description]
      */
     function loadEntries() {
+
+      if (_cached != null)
+        return $q.resolve(_cached)
+
       return $http.get('data/diciomane.json')
         .then(function(res){
+
           var entries = res.data;
           var entrymap = {};
 
@@ -70,7 +70,9 @@ angular.module('diciomane.svc.dictionary', [])
             entrymap[entries[i].id+'']= entries[i];
           }
 
-          return {entries: entries, entryMap: entrymap}
+          _cached = {entries: entries, entryMap: entrymap};
+
+          return _cached;
         })
     }
 
