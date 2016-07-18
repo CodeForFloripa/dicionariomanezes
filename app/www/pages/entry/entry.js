@@ -4,10 +4,11 @@ angular.module('diciomane.pages.entry',[])
     function($stateParams, dictionary) {
 
     var ctrl = this;
+
     this.verbeteID = $stateParams.id;
+
     dictionary.entry(this.verbeteID)
       .then(function(entry) {
         ctrl.entry = entry;
-        console.log(ctrl.entry);
       });
   }]);
