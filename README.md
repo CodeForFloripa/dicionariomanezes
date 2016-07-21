@@ -13,6 +13,8 @@ plataformas.
 
 Todo o código do Code For Floripa é open source e qualquer um pode contribuir. Caso queira nos ajudar leia as [instruções aqui](CONTRIBUTING.md) :)
 
+> IMPORTANTE: para os que querem contribuir com código, todas as contibuições devem ser feitas a partir da branch dev e adicionadas a ela. A branch master é reservada para versões estáveis e hotfixes.
+
 # O que é o Code For Floripa
 
 ![Alt text](/doc-img/logo.png)
