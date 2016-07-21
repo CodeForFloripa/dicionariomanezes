@@ -1,18 +1,19 @@
-angular.module('diciomane.pages.home',[])
-  .controller('HomeCtrl', ['$state', 'DictionarySvc',
-    function($state, dictionary) {
+angular.module('diciomane.pages.home', ['utils.localstorage'])
+  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage',
+    'WordOfTheDaySvc',
+    function($state, dictionary, $localStorage, wordOfTheDay) {
 
       var ctrl = this;
 
-      // Selects a random entry to be displayed in the home
-      dictionary.allEntries().then(
-        function(entries) {
-          ctrl.entry = entries[Math.floor(Math.random()*entries.length)]
-        }
-      )
+      wordOfTheDay(new Date())
+        .then(function(e) {
+          ctrl.entry = e
+        })
 
       ctrl.openEntry = function(entry) {
-        $state.go('entry', {id: entry.id})
+        $state.go('entry', {
+          id: entry.id
+        })
       }
 
       ctrl.openDictionary = function() {
@@ -23,4 +24,5 @@ angular.module('diciomane.pages.home',[])
         $state.go('search')
       }
 
-  }]);
+    }
+  ]);
