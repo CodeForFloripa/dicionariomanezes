@@ -10,7 +10,9 @@ angular.module('diciomane', ['ionic',
   'diciomane.pages.dictionary',
   'diciomane.pages.home',
   'diciomane.svc.dictionary',
-  'ngMaterial'])
+  'diciomane.svc.wordoftheday',
+  'ngMaterial'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,22 +34,22 @@ angular.module('diciomane', ['ionic',
 
   $stateProvider
 
-  .state('home', {
-    url: '/home',
-    templateUrl: 'pages/home/_home.html'
-  })
-  .state('entry', {
-    url: '/entry/:id',
-    templateUrl: 'pages/entry/_entry.html'
-  })
-  .state('dictionary', {
-    url: '/dictionary',
-    templateUrl: 'pages/dictionary/_dictionary.html'
-  })
-  .state('search', {
-    url: '/search',
-    templateUrl: 'pages/search/_search.html'
-  })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'pages/home/_home.html'
+    })
+    .state('entry', {
+      url: '/entry/:id',
+      templateUrl: 'pages/entry/_entry.html'
+    })
+    .state('dictionary', {
+      url: '/dictionary',
+      templateUrl: 'pages/dictionary/_dictionary.html'
+    })
+    .state('search', {
+      url: '/search',
+      templateUrl: 'pages/search/_search.html'
+    })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home');
