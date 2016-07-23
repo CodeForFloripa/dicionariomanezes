@@ -1,0 +1,17 @@
+{
+  "Categorias": [{
+    "name": "favoritas"
+  }, {
+    "name": "elogios"
+  }, {
+    "name": "xingamento"
+  }, {
+    "name": "boteco"
+  }, {
+    "name": "tradição"
+  }, {
+    "name": "expressões"
+  }, {
+    "name": "inapropriado"
+  }]
+}
