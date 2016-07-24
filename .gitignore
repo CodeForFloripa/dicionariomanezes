@@ -10,3 +10,4 @@ app/www/lib
 **/Thumbs.db
 **/*.log
 app/www/css
+.vscode

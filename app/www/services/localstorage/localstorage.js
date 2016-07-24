@@ -7,7 +7,7 @@ angular.module('utils.localstorage', [])
       get: function(key, defaultValue) {
         var value = $window.localStorage[key];
 
-        return value ? $q.resolve(value) : $q.reject();
+        return $q.resolve(value || defaultValue);
       },
       setObject: function(key, value) {
         $window.localStorage[key] = JSON.stringify(value);
