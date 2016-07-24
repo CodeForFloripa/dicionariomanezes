@@ -1,8 +1,46 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import json
 import sqlite3
 
 #Abrir conexão com BD
 conn = sqlite3.connect('dicionariomane.db')
+
+
+
+# Criar banco de dados
+
+creationQuery = """
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: Categories
+DROP TABLE IF EXISTS Categories;
+CREATE TABLE Categories (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, name STRING NOT NULL UNIQUE);
+
+-- Table: Entries
+DROP TABLE IF EXISTS Entries;
+CREATE TABLE Entries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+    entry STRING NOT NULL, 
+    meaning STRING NOT NULL, 
+    source STRING, 
+    search STRING);
+
+CREATE INDEX IF NOT EXISTS idx_search ON Entries (search);
+
+-- Table: EntryCategory
+DROP TABLE IF EXISTS EntryCategory;
+CREATE TABLE EntryCategory (
+    entry INTEGER REFERENCES Entries (id) ON DELETE CASCADE ON UPDATE CASCADE, 
+    category INTEGER REFERENCES Categories (id) ON DELETE CASCADE ON UPDATE CASCADE);
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
+"""
+
+conn.cursor().executescript(creationQuery)
 
 # Carregar verbetes
 with open('dicionario.json') as data_file:
@@ -16,42 +54,38 @@ categories = jsonCat["Categorias"]
 entries = jsonDic["Sheet1"]
 
 # Popular categorias
-for category in categories:
-    name = category["name"]
-    c = conn.cursor()
-    try:
-        c.execute("INSERT INTO Category (name) VALUES (?)",(name,))
-        conn.commit()
-    except sqlite3.Error as e:
-        print e
-        continue
+
+c = conn.cursor()
+
+try:
+    c.executemany("INSERT INTO Categories (name) VALUES (?)", [[cat["name"]] for cat in categories])        
+except sqlite3.Error as e:
+    print e
 
 #Recuperar ids das categorias no banco de dados
 all_categories = {}
-for row in c.execute('SELECT * FROM Category ORDER BY id'):
+for row in c.execute('SELECT * FROM Categories ORDER BY id'):
     all_categories[row[1]] = row[0]
 
 # Popular verbetes e associar categorias
-for entry in entries:
-    name = entry["entry"]
-    try:
-        c.execute("INSERT INTO Entry (entry, meaning, source) VALUES (?, ?, ?)",(entry["entry"], entry["meaning"], entry["source"]))
-        conn.commit()
-        entry.pop("entry")
-        entry.pop("meaning")
-        entry.pop("source")
-        keys = entry.keys()
-        id = c.lastrowid
 
-        # Associar categorias em EntryCategory
-        for i in range(0, len(keys)):
-            try:
-                if(entry[keys[i]] == "X" or entry[keys[i]] == "x"):
-                    c.execute("INSERT INTO EntryCategory (category, entry) VALUES (?, ?)", (all_categories[keys[i]],id))
-                    conn.commit()
-            except:
-                continue
-    except:
-        continue
+q = "INSERT INTO Entries (entry, meaning, source, search) VALUES (?, ?, ?, ?)"
+
+try:
+    c.executemany(q,[[e["entry"], e["meaning"], e["source"], (e["entry"]+" "+e["meaning"]).lower()] for e in entries])
+except:
+    print "EC: "+str(e)
+
+
+# Associar categorias em EntryCategory
+cats = [[cat_id, e_id+1] for e_id, e in enumerate(entries) for cat_name, cat_id in all_categories.iteritems() if  (e[cat_name] == 'X' or e[cat_name]=='x')]
+
+try:         
+    c.executemany("INSERT INTO EntryCategory (category, entry) VALUES (?, ?)", cats)
+except sqlite3.Error as e:
+    print "EC: "+str(e)
+
 #Fechar conexão
+
+conn.commit()
 conn.close()
