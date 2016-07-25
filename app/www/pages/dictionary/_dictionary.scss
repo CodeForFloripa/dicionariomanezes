@@ -1,16 +1,12 @@
-[page=Dictionary] {
+[page=Dictionary]{
 
   #entries-list {
     margin-right: 60px;
 
     .entry {
-
       margin-top: 8px;
       padding-bottom: 16px;
-
       border-bottom: 1px solid #CCC;
-
-
 
       div {
         display: block;
@@ -32,8 +28,6 @@
 
       }
     }
-
-
   }
 
   #letter-picker {
@@ -54,18 +48,12 @@
       span {
         color: white;
         display: block;
-
         background-color: $primary;
         height: 48px;
         width: 48px;
         line-height: 48px;
-
         border-radius: 50%;
-
-
       }
     }
-
   }
-
 }

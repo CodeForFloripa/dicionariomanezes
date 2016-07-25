@@ -9870,3 +9870,32 @@ a.button {
       width: 48px;
       line-height: 48px;
       border-radius: 50%; }
+
+[page=Search] #entries-list .header {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: bold; }
+  [page=Search] #entries-list .header div {
+    display: block; }
+
+[page=Search] #entries-list .entry {
+  margin-top: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #CCC; }
+  [page=Search] #entries-list .entry div {
+    display: block; }
+  [page=Search] #entries-list .entry .title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    margin-bottom: 4px; }
+  [page=Search] #entries-list .entry .meaning {
+    line-height: 20px;
+    display: block;
+    word-wrap: normal;
+    text-align: justify;
+    color: #AAA; }
