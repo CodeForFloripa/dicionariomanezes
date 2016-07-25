@@ -6,9 +6,6 @@ function DatabaseSvc($cordovaSQLite, $localStorage, $ionicPlatform, $q){
   defferedTransactions = []
 
 
-  $ionicPlatform.ready(function() {
-    self.init();
-  })
 
   self.init = function init() {
     self.db = window.sqlitePlugin.openDatabase( {name: "dicionariomane.db",
@@ -19,6 +16,11 @@ function DatabaseSvc($cordovaSQLite, $localStorage, $ionicPlatform, $q){
 
     defferedTransactions = [];
   }
+
+  $ionicPlatform.ready(function() {
+    self.init();
+  })
+
 
   function performTransaction(transaction) {
     $cordovaSQLite.execute(self.db, transaction.query, transaction.params)
@@ -50,6 +52,7 @@ function DatabaseSvc($cordovaSQLite, $localStorage, $ionicPlatform, $q){
 
   function extractItems(res) {
     var nElements = res.rows.length;
+
     var c = [];
 
     for (i=0; i<nElements; i++)
@@ -58,40 +61,15 @@ function DatabaseSvc($cordovaSQLite, $localStorage, $ionicPlatform, $q){
     return c;
   }
 
-  this.categories = function categories() {
-    if (_categories) return $q.resolve(_categories)
+  this.queryMany = performQuery
 
-    return performQuery("SELECT * FROM Categories")
-      .then(function qRes(res) {
-        _categories = res;
-        return _categories;
-      })
+  this.queryOne = function(query, params) {
+    return performQuery(query, params).then(function(res) {
+      console.log(JSON.stringify(res))
+      return res[0]
+    })
   }
 
-  this.searchEntries = function(subs) {
-    return performQuery("SELECT * FROM Entries WHERE search LIKE \'%"+subs+"%\'")
-  }
-
-  this.entriesStartingWith = function(letter) {
-    var q = "SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'";
-    return performQuery(q)
-  }
-
-  this.entry = function(id) {
-    return performQuery("SELECT * FROM Entries WHERE id=?", [id])
-      .then(function qRes(res) {
-        return res[0];
-      })
-  }
-
-  this.categoryEntries = function(categoryID) {
-    query = "SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE ec.category=?"
-    return performQuery(query, [categoryID])
-  }
-
-  this.entries = function() {
-    return performQuery("SELECT * FROM Entries")
-  }
 
 }
 

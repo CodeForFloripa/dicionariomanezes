@@ -10,7 +10,7 @@ angular.module('diciomane.pages.dictionary',[])
 
     ctrl.reloadEntries =  function(letter) {
       ctrl.letter = letter;
-      dictionary.startsWith(letter).then(function(w){
+      dictionary.entriesStartingWith(letter).then(function(w){
         ctrl.words = w;
       })
     }
