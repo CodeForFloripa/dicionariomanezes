@@ -7,7 +7,7 @@ angular.module('diciomane.pages.entry',[])
 
     this.verbeteID = $stateParams.id;
 
-    dictionary.entry(this.verbeteID)
+    dictionary.entryWithID(this.verbeteID)
       .then(function(entry) {
         ctrl.entry = entry;
       });

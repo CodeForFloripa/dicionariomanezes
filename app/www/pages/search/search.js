@@ -8,7 +8,7 @@ angular.module('diciomane.pages.search', [])
     ctrl.search = function() {
       console.log(ctrl.entry);
       if (ctrl.entry.length >= 3) {
-        dictionary.search(ctrl.entry).then(function(entries) {
+        dictionary.searchEntries(ctrl.entry).then(function(entries) {
           ctrl.entries = entries;
           console.log(entries);
         });

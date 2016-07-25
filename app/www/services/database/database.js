@@ -65,7 +65,6 @@ function DatabaseSvc($cordovaSQLite, $localStorage, $ionicPlatform, $q){
 
   this.queryOne = function(query, params) {
     return performQuery(query, params).then(function(res) {
-      console.log(JSON.stringify(res))
       return res[0]
     })
   }

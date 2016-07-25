@@ -20,16 +20,16 @@ function DictionarySvc($q, db) {
     return db.queryMany(q)
   }
 
-  this.entry = function(id) {
+  this.entryWithID = function(id) {
     return db.queryOne("SELECT * FROM Entries WHERE id=?", [id])
   }
 
-  this.categoryEntries = function(categoryID) {
+  this.entriesForCategory = function(categoryID) {
     query = "SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE ec.category=?"
     return db.queryMany(query, [categoryID])
   }
 
-  this.entries = function() {
+  this.allEntries = function() {
     return db.queryMany("SELECT * FROM Entries")
   }
 
