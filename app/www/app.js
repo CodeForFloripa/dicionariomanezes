@@ -16,7 +16,7 @@ angular.module('diciomane', ['ionic',
   'ngMaterial'
 ])
 
-.run(function($ionicPlatform, $cordovaSQLite, DatabaseSvc) {
+.run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -29,11 +29,6 @@ angular.module('diciomane', ['ionic',
       StatusBar.styleDefault();
     }
 
-    if(window.sqlitePlugin) {
-      DatabaseSvc.init();
-    } else {
-      console.log("DB not found");
-    }
   });
 })
 
