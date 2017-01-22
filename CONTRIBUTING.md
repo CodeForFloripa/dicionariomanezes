@@ -28,8 +28,12 @@ Se você quer contribuir colocando a mão na massa, mas ainda não sabe programa
 3. `npm install -g ionic gulp bower`
 4. `npm install`
 5. `bower install`
-6. `ionic serve` Isso deve abrir uma janela no browser com o app
-7. Se quiser rodar no device: `ionic run android --device`
+6. Se quiser rodar no device: `ionic run android --device`
+7. Se quiser rodar no emulardor: `ionic emulate android`
+
+> Como o banco de dados roda no device, por enquanto não é possível rodar no browser. Isso deve ser corrigido via código.
+
+> Se após de rodar os comandos acima as mensagens ainda no aparecerem, tente usar o comando `ionic state reset`, para atualizar os plugins.
 
 ### Sincronizando com o repositório original
 
