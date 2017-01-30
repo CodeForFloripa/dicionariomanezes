@@ -10,6 +10,7 @@ angular.module('diciomane', ['ionic',
   'diciomane.pages.search',
   'diciomane.pages.dictionary',
   'diciomane.pages.home',
+  'diciomane.pages.xingamentos',
   'diciomane.svc.dictionary',
   'diciomane.svc.database',
   'diciomane.svc.wordoftheday',
@@ -51,6 +52,10 @@ angular.module('diciomane', ['ionic',
     .state('search', {
       url: '/search',
       templateUrl: 'pages/search/_search.html'
+    })
+    .state('xingamentos', {
+      url: '/xingamentos',
+      templateUrl: 'pages/xingamentos/_xingamentos.html'
     })
 
   // if none of the above states are matched, use this as the fallback

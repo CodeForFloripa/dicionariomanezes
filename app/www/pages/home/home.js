@@ -24,5 +24,9 @@ angular.module('diciomane.pages.home', ['utils.localstorage'])
         $state.go('search')
       }
 
+      ctrl.openXingamentos = function() {
+        $state.go('xingamentos')
+      }
+      
     }
   ]);
