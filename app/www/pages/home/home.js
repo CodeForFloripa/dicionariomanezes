@@ -1,6 +1,5 @@
 angular.module('diciomane.pages.home', ['utils.localstorage'])
-  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage',
-    'WordOfTheDaySvc',
+  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage', 'WordOfTheDaySvc',
     function($state, dictionary, $localStorage, wordOfTheDay) {
 
       var ctrl = this;
@@ -24,9 +23,32 @@ angular.module('diciomane.pages.home', ['utils.localstorage'])
         $state.go('search')
       }
 
+      ctrl.openFavoritos = function() {
+        $state.go('favoritos')
+      }
+      
+      ctrl.openElogios = function() {
+        $state.go('elogios')
+      }
+      
       ctrl.openXingamentos = function() {
         $state.go('xingamentos')
       }
       
+      ctrl.openBoteco = function() {
+        $state.go('boteco')
+      }
+      
+      ctrl.openTradicao = function() {
+        $state.go('tradicao')
+      }
+      
+      ctrl.openExpressoes = function() {
+        $state.go('expressoes')
+      }
+      
+      ctrl.openInapropriado = function() {
+        $state.go('inapropriado')
+      }
     }
   ]);

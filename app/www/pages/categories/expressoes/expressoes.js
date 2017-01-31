@@ -1,7 +1,7 @@
 'use strict'
 
-angular.module('diciomane.pages.xingamentos',[])
-  .controller('XingamentosCtrl', ['$state', 'DictionarySvc', function($state, dictionary) {
+angular.module('diciomane.pages.categories.expressoes',[])
+  .controller('ExpressoesCtrl', ['$state', 'DictionarySvc', function($state, dictionary) {
 
     var ctrl = this;
 
@@ -11,8 +11,8 @@ angular.module('diciomane.pages.xingamentos',[])
     ctrl.reloadEntries =  function(letter) {
       ctrl.letter = letter;
 
-      /* IDCategory Xingamentos is 3 */    
-      dictionary.entriesForCategory(letter, 3).then(function(w){
+      /* IDCategory Expressões is 6 */    
+      dictionary.entriesForCategory(letter, 6).then(function(w){
         ctrl.words = w;
       }); 
    }

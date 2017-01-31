@@ -1,0 +1,26 @@
+<ion-view view-title="Dicionário: {{tc.letter | uppercase}}" page="Dictionary" ng-controller="TradicaoCtrl as tc">
+  <ion-content>
+    <md-list id="entries-list">
+
+      <md-list-item
+        ng-repeat="e in tc.words track by $index"
+        ng-click="tc.openEntry(e)"
+        class="entry"
+      >
+        <div class="title">{{e.entry}}</div>
+        <div class="meaning">{{e.meaning | limitTo: 80}}</div>
+
+      </md-list-item>
+
+    </md-list>
+
+  </ion-content>
+
+  <ion-list id="letter-picker">
+    <ion-item ng-repeat="l in tc.letters track by $index"
+      ng-click="tc.reloadEntries(l)"
+      >
+      <span md-ripple>{{l | uppercase}}</span>
+    </ion-item>
+  </ion-list>
+</ion-view>
