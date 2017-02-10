@@ -19,7 +19,7 @@ angular.module('diciomane.pages.dictionary',[])
       $state.go('entry', {id: word.id})
     }
 
-    ctrl.reloadEntries('a')
+    ctrl.reloadEntries('')
 
 
   }]);

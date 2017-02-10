@@ -16,17 +16,17 @@ function DictionarySvc($q, db) {
   }
 
   this.entriesStartingWith = function(letter) {
-    var q = "SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'";
-    return db.queryMany(q)
+//    var query = "SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'";
+    return db.queryMany("SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'")
   }
 
   this.entryWithID = function(id) {
     return db.queryOne("SELECT * FROM Entries WHERE id=?", [id])
   }
 
-  this.entriesForCategory = function(categoryID) {
-    query = "SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE ec.category=?"
-    return db.queryMany(query, [categoryID])
+  this.entriesForCategory = function(letter, categoryID) {
+//    var query = "SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE ec.category=?"
+    return db.queryMany("SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search LIKE \'"+letter+"%\' AND ec.category=?", [categoryID])
   }
 
   this.allEntries = function() {
