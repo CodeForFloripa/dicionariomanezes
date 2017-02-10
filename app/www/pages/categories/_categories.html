@@ -1,10 +1,10 @@
-<ion-view view-title="Dicionário: {{xc.letter | uppercase}}" page="Dictionary" ng-controller="XingamentosCtrl as xc">
+<ion-view view-title="Dicionário: {{cc.letter | uppercase}}" page="Dictionary" ng-controller="CategoriesCtrl as cc">
   <ion-content>
     <md-list id="entries-list">
 
       <md-list-item
-        ng-repeat="e in xc.words track by $index"
-        ng-click="xc.openEntry(e)"
+        ng-repeat="e in cc.words track by $index"
+        ng-click="cc.openEntry(e)"
         class="entry"
       >
         <div class="title">{{e.entry}}</div>
@@ -17,8 +17,8 @@
   </ion-content>
 
   <ion-list id="letter-picker">
-    <ion-item ng-repeat="l in xc.letters track by $index"
-      ng-click="xc.reloadEntries(l)"
+    <ion-item ng-repeat="l in cc.letters track by $index"
+      ng-click="cc.reloadEntries(l)"
       >
       <span md-ripple>{{l | uppercase}}</span>
     </ion-item>

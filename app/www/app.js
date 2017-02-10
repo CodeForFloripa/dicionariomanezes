@@ -10,13 +10,7 @@ angular.module('diciomane', ['ionic',
   'diciomane.pages.search',
   'diciomane.pages.dictionary',
   'diciomane.pages.home',
-  'diciomane.pages.categories.favoritos',
-  'diciomane.pages.categories.elogios',
-  'diciomane.pages.categories.xingamentos',
-  'diciomane.pages.categories.boteco',
-  'diciomane.pages.categories.tradicao',
-  'diciomane.pages.categories.expressoes',
-  'diciomane.pages.categories.inapropriado',
+  'diciomane.pages.categories',                             
   'diciomane.svc.dictionary',
   'diciomane.svc.database',
   'diciomane.svc.wordoftheday',
@@ -59,33 +53,9 @@ angular.module('diciomane', ['ionic',
       url: '/search',
       templateUrl: 'pages/search/_search.html'
     })
-    .state('favoritos', {
-      url: '/favoritos',
-      templateUrl: 'pages/categories/favoritos/_favoritos.html'
-    })
-    .state('elogios', {
-      url: '/elogios',
-      templateUrl: 'pages/categories/elogios/_elogios.html'
-    })
-    .state('xingamentos', {
-      url: '/xingamentos',
-      templateUrl: 'pages/categories/xingamentos/_xingamentos.html'
-    })
-    .state('boteco', {
-      url: '/boteco',
-      templateUrl: 'pages/categories/boteco/_boteco.html'
-    })
-    .state('tradicao', {
-      url: '/tradicao',
-      templateUrl: 'pages/categories/tradicao/_tradicao.html'
-    })
-    .state('expressoes', {
-      url: '/expressoes',
-      templateUrl: 'pages/categories/expressoes/_expressoes.html'
-    })
-    .state('inapropriado', {
-      url: '/inapropriado',
-      templateUrl: 'pages/categories/inapropriado/_inapropriado.html'
+    .state('categories', {
+      url: '/categories/:id',
+      templateUrl: 'pages/categories/_categories.html'
     })
 
   // if none of the above states are matched, use this as the fallback

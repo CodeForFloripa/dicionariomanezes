@@ -19,7 +19,7 @@
           {{hc.entry.source}}
         </md-card-content>
 
-        <md-card-actions  layout="row" layout-align="end center">
+        <md-card-actions layout="row" layout-align="end center">
           <md-button ng-click="hc.openEntry(hc.entry)">Ler Mais</md-button>
         </md-card-actions>
 
@@ -27,13 +27,14 @@
 
       <md-button class="md-raised md-primary" ng-click="hc.openDictionary()">Dicionário</md-button>
       <md-button class="md-raised md-primary" ng-click="hc.openSearch()">Buscar</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openFavoritos()">Favoritos</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openElogios()">Elogios</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openXingamentos()">Xingamentos</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openBoteco()">Boteco</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openTradicao()">Tradição</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openExpressoes()">Expressões</md-button>
-      <md-button class="md-raised md-primary" ng-click="hc.openInapropriado()">Inapropriado</md-button>
+<!--      <md-button class="md-raised md-primary" ng-click="hc.openFavoritos()">Favoritos</md-button>-->
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(1)">Favoritos</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(2)">Elogios</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(3)">Xingamentos</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(4)">Boteco</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(5)">Tradição</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(6)">Expressões</md-button>
+      <md-button class="md-raised md-primary" ng-click="hc.openCategories(7)">Inapropriado</md-button>
 
     </ion-content>
   </ion-view>
