@@ -9829,6 +9829,8 @@ a.button {
     color: white;
     font-weight: bold;
     text-transform: uppercase; }
+  [page=Home] md-card-header-text {float: left; display:inline; }
+  
 
 [page=Dictionary] #entries-list {
   margin-right: 60px; }
@@ -9853,6 +9855,7 @@ a.button {
 [page=Dictionary] #letter-picker {
   position: absolute;
   top: 44px;
+  padding-bottom: 44px;
   right: 0;
   width: 60px;
   height: 100%;

@@ -1,8 +1,10 @@
 angular.module('diciomane.pages.home', ['utils.localstorage'])
-  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage', 'WordOfTheDaySvc',
-    function($state, dictionary, $localStorage, wordOfTheDay) {
+  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage', 'WordOfTheDaySvc', '$scope', '$filter',
+    function($state, dictionary, $localStorage, wordOfTheDay, $scope, $filter) {
 
       var ctrl = this;
+        
+      $scope.date_pt_br = $filter('date')(Date.now(), "dd 'de' MMMM");
 
       wordOfTheDay(new Date())
         .then(function(e) {
