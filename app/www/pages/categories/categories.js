@@ -7,9 +7,32 @@ angular.module('diciomane.pages.categories',[])
 
     ctrl.words = [];
     ctrl.letters = "abcdefghijklmnopqrstuvwxyz".split('');
+    ctrl.categoryName = "";
         
     this.categoryID = $stateParams.id;
-
+      
+    switch(this.categoryID){
+      case '1':
+        ctrl.categoryName = "Favoritos";
+        break;
+      case '2':
+        ctrl.categoryName = "Elogios";
+        break;
+      case '3':
+        ctrl.categoryName = "Xingamentos";
+        break;
+      case '4':
+        ctrl.categoryName = "Boteco";
+        break;
+      case '5':
+        ctrl.categoryName = "Tradição";
+        break;
+      case '6':
+        ctrl.categoryName = "Expressões";
+        break;
+      case '7':
+        ctrl.categoryName = "Inapropriado";
+    }  
         
     ctrl.reloadEntries = function(letter) {
       ctrl.letter = letter;

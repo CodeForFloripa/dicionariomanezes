@@ -9829,8 +9829,12 @@ a.button {
     color: white;
     font-weight: bold;
     text-transform: uppercase; }
-  [page=Home] md-card-header-text {float: left; display:inline; }
-  
+  [page=Home] table { width: 100%; }
+  [page=Home] #date {
+    text-align: right;
+    color: white;
+    font-weight:normal;
+    text-transform:lowercase; };
 
 [page=Dictionary] #entries-list {
   margin-right: 60px; }

@@ -1,4 +1,7 @@
-<ion-view view-title="Dicionário: {{dc.letter | uppercase}}" page="Dictionary" ng-controller="DictionaryCtrl as dc">
+<!--<ion-view view-title="Dicionário: {{dc.letter | uppercase}}" page="Dictionary" ng-controller="DictionaryCtrl as dc">-->
+<ion-view view-title="<div class='main-title' style='line-height:1.6;'>Dicionário: {{dc.letter | uppercase}}</div>
+                 <div class='sub-title' style='line-height:0.6; font-size:12px; color:white;'>Dicionário Manezês</div>" 
+                 page="Dictionary" ng-controller="DictionaryCtrl as dc">    
   
   <ion-content>
     <md-list id="entries-list">
