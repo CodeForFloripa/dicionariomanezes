@@ -7,10 +7,14 @@
     <md-card>
 
       <md-card-title>
-        <md-card-title-text><h1> {{ec.entry.entry}} </h1></md-card-title-text>
+        <md-card-title-text><h1> {{ec.entry.entry}} </h1></md-card-title-text>          
       </md-card-title>
 
       <md-card-content>
+        
+        <a class="button-positive" ng-click="ec.toggleFavorite(!ec.favorite)" ><i class="button button-icon" ng-class="{'icon ion-ios-heart-outline' : !ec.favorite , 'icon ion-ios-heart' : ec.favorite}"></i></a>  
+       <!--        <a class="button button-icon icon ion-volume-medium"></a>-->
+        <br />
         {{ec.entry.meaning}}
         <br />
         <br />

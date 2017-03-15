@@ -16,7 +16,6 @@ function DictionarySvc($q, db) {
   }
 
   this.entriesStartingWith = function(letter) {
-//    var query = "SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'";
     return db.queryMany("SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'")
   }
 
@@ -25,13 +24,29 @@ function DictionarySvc($q, db) {
   }
 
   this.entriesForCategory = function(letter, categoryID) {
-//    var query = "SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE ec.category=?"
     return db.queryMany("SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search LIKE \'"+letter+"%\' AND ec.category=?", [categoryID])
   }
 
   this.allEntries = function() {
     return db.queryMany("SELECT * FROM Entries")
   }
+  
+  this.isFavorite = function(idEntry) {  
+    return db.queryOne("SELECT COUNT(*) count FROM entryCategory as ec WHERE ec.category=1 AND ec.entry=?", [idEntry])
+  }
+  
+  this.addFavorite = function(idEntry) {
+      var favCategory = 1; // ID Favorite category
+      db.queryOne("INSERT INTO EntryCategory (category, entry) VALUES (?, ?)", [favCategory, idEntry])
+  }
+  
+  this.delFavorite = function(idEntry) {
+      db.queryOne("DELETE FROM EntryCategory WHERE EntryCategory.category=1 AND EntryCategory.entry=?", [idEntry])
+  }
+  
+//  this.delAllFavorite = function() {
+//      db.queryOne("DELETE FROM EntryCategory WHERE EntryCategory.category=1")
+//  }
 
 }
 
