@@ -5,6 +5,11 @@
 
    <ion-content>    
     <md-list id="entries-list">
+    
+      <md-list-item ng-if="cc.emptyEntry" class="entry">
+        <div class="title"> Nenhum verbete encontrado.</div>
+      </md-list-item>    
+        
       <md-list-item ng-repeat="e in cc.words track by $index" ng-click="cc.openEntry(e)" class="entry">
         <div class="title">{{e.entry}}</div>
         <div class="meaning">{{e.meaning | limitTo: 80}}</div>

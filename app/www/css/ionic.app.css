@@ -9849,34 +9849,36 @@ a.button {
       line-height: 24px;
       font-weight: bold;
       margin-bottom: 4px; }
+      
     [page=Dictionary] #entries-list .entry .meaning {
       line-height: 20px;
       display: block;
       word-wrap: normal;
       text-align: justify;
       color: #AAA; }
-
+   
 [page=Dictionary] #letter-picker {
   position: absolute;
   top: 44px;
   padding-bottom: 44px;
   right: 0;
-  width: 60px;
+  width: 51px;
   height: 100%;
   overflow-y: scroll; }
   [page=Dictionary] #letter-picker ion-item {
     text-align: center;
     border-width: 0px !important;
     border-bottom-color: none;
-    padding: 4px; }
+    padding: 1.5px; }
     [page=Dictionary] #letter-picker ion-item span {
       color: white;
+      font-size: 20px;
       display: block;
       background-color: #3F51B5;
       height: 48px;
       width: 48px;
       line-height: 48px;
-      border-radius: 50%; }
+      border-radius: 10%; }
 
 [page=Search] #entries-list .header {
   padding-bottom: 5px;

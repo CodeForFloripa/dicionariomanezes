@@ -5,9 +5,9 @@ angular.module('diciomane.pages.categories',[])
 
     var ctrl = this;
 
-    ctrl.words = [];
     ctrl.letters = "abcdefghijklmnopqrstuvwxyz".split('');
     ctrl.categoryName = "";
+    ctrl.emptyEntry = false;
         
     this.categoryID = $stateParams.id;
       
@@ -36,12 +36,16 @@ angular.module('diciomane.pages.categories',[])
         
     ctrl.reloadEntries = function(letter) {
       ctrl.letter = letter;
+      ctrl.words = [];
       
-      /* CategoryID parameter */    
-      dictionary.entriesForCategory(letter, this.categoryID).then(function(w){
-        ctrl.words = w;
-      });
-        
+      dictionary.countEntries(letter, this.categoryID).then(function(c){
+        var categoryID = $stateParams.id;
+        if (c.count != 0){
+          ctrl.emptyEntry = false;
+          dictionary.entriesForCategory(letter, categoryID).then(function(w){ ctrl.words = w; });
+        }
+        else ctrl.emptyEntry = true;
+      })
     }
     
     ctrl.openEntry = function(word) {

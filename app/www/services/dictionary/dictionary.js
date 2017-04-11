@@ -16,7 +16,10 @@ function DictionarySvc($q, db) {
   }
 
   this.entriesStartingWith = function(letter) {
-    return db.queryMany("SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'")
+    if (letter == '')
+      return db.queryMany("SELECT * FROM Entries WHERE search LIKE \'"+letter+"%\'")
+    else
+      return db.queryMany("SELECT * FROM Entries WHERE search GLOB \'["+letter+"-z]*\'")         
   }
 
   this.entryWithID = function(id) {
@@ -24,7 +27,17 @@ function DictionarySvc($q, db) {
   }
 
   this.entriesForCategory = function(letter, categoryID) {
-    return db.queryMany("SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search LIKE \'"+letter+"%\' AND ec.category=?", [categoryID])
+      if (letter == '')
+        return db.queryMany("SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search LIKE \'"+letter+"%\' AND ec.category=?", [categoryID])
+      else
+        return db.queryMany("SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search GLOB \'["+letter+"-z]*\' AND ec.category=?", [categoryID])         
+  }
+  
+  this.countEntries = function(letter, categoryID = 0) {
+      if (categoryID == 0) // none category, but the all dictionary
+        return db.queryOne("SELECT COUNT(*) count FROM Entries WHERE search LIKE \'"+letter+"%\'")
+      else
+        return db.queryOne("SELECT COUNT(*) count FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search LIKE \'"+letter+"%\' AND ec.category=?", [categoryID])
   }
 
   this.allEntries = function() {
