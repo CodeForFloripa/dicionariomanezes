@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="org.codeforfloripa.diciomane" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>DicioMane</name>
+  <name>DicioMané</name>
   <description>
-        An Ionic Framework and Cordova project.
+        O manezês é uma das maiores riquezas culturais da população de Florianópolis, mas pouco conhecido, criando uma barreira entre moradores locais e pessoas que vêm de fora.
+O DicioMané é uma tentativa de divulgar o manezês de forma fácil e divertida.
     </description>
   <author email="you@example.com" href="http://example.com.com/">
       Your Name Here
