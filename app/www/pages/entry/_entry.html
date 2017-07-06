@@ -12,16 +12,24 @@
 
       <md-card-content>
         
-        <a class="button-positive" ng-click="ec.toggleFavorite(!ec.favorite)" ><i class="button button-icon" ng-class="{'icon ion-ios-heart-outline' : !ec.favorite , 'icon ion-ios-heart' : ec.favorite}"></i></a>  
+        <a class="button-positive" ng-click="ec.toggleFavorite(!ec.favorite)" >
+            <i class="button button-icon" ng-class="{'icon ion-ios-heart-outline' : !ec.favorite , 'icon ion-ios-heart' : ec.favorite}"></i>
+        </a>  
        <!--        <a class="button button-icon icon ion-volume-medium"></a>-->
         <br />
         {{ec.entry.meaning}}
         <br />
         <br />
-
+<!--
+        <hr/>
+        <br/>
         {{ec.entry.source}}
+-->
       </md-card-content>
-
+        <div class="item item-divider">
+           <h3>Referência: <a href="{{ec.entry.source}}" onclick="window.open(this.href, '_system', 'location=yes'); return false" class="link">{{ec.entry.source}}</a></h3>
+        </div>
+        
     </md-card>
 
   </ion-content>

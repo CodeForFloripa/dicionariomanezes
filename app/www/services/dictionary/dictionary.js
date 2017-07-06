@@ -33,8 +33,10 @@ function DictionarySvc($q, db) {
         return db.queryMany("SELECT e.* FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search GLOB \'["+letter+"-z]*\' AND ec.category=?", [categoryID])         
   }
   
-  this.countEntries = function(letter, categoryID = 0) {
-      if (categoryID == 0) // none category, but the all dictionary
+  this.countEntries = function(letter, categoryID) {
+      var catID = typeof categoryID !== 'undefined' ? categoryID : 0;
+ 
+      if (catID == 0) // none category, but the Dictionary button
         return db.queryOne("SELECT COUNT(*) count FROM Entries WHERE search LIKE \'"+letter+"%\'")
       else
         return db.queryOne("SELECT COUNT(*) count FROM Entries as e JOIN EntryCategory as ec on e.id=ec.entry WHERE search LIKE \'"+letter+"%\' AND ec.category=?", [categoryID])

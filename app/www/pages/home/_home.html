@@ -6,12 +6,19 @@
       
     <ion-content>
 
-      <md-card>
+      <md-card style="box-shadow: none !important">
+<!--
         <label class="item item-input">
           <i class="icon ion-search placeholder-icon"></i>
           <input type="text" placeholder="Buscar um verbete ou significado" ng-click="hc.openSearch()" readonly>
         </label>
+-->
+        <div class="item item-text-wrap" id="md-button-search" ng-click="hc.openSearch()">
+            <i class="icon ion-search placeholder-icon"></i>Buscar um verbete ou significado
+        </div>
+        
       </md-card>
+      <br/>
         
       <md-card>
         <md-card-header>
@@ -30,14 +37,26 @@
 
         <md-card-content>
           {{hc.entry.meaning}}
-          <br />
-          {{hc.entry.source}}
         </md-card-content>
-
-        <md-card-actions layout="row" layout-align="end center">
-          <md-button ng-click="hc.openEntry(hc.entry)">Ler Mais</md-button>
-        </md-card-actions>
+        <br/>
+        
+        <div class="item item-text-wrap md-button" ng-click="hc.openEntry(hc.entry)" style="color: rgba(1, 87, 155, 255)">
+            Ler Mais
+        </div>
+          
+<!--
+        <div class="item item-divider md-button" ng-click="hc.openEntry(hc.entry)" style="color: rgba(1, 87, 155, 255)">
+            Ler mais
+        </div>
+-->
       </md-card>
+      <br/>
+        
+<!--
+      <md-card-actions layout="row" layout-align="end center" style="color: rgba(1, 87, 155, 255)">
+          <md-button ng-click="hc.openEntry(hc.entry)">Ler Mais</md-button>
+      </md-card-actions>
+-->
 
       <md-card>
         <md-card-header>
@@ -48,40 +67,62 @@
         
         <div class="row"> 
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openDictionary()">Dicionário</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openDictionary()" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/dicionario.png" style="width: 100%">
+               </md-button>
            </div>
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(1)">Favoritos</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(1)" style="background-color: rgba(223, 247, 255, 255)">
+                 <img class="png-icon" src="img/fav.png" style="width: 100%">
+               </md-button>
            </div>     
         </div>
 
         <div class="row"> 
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(2)">Elogios</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(2)" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/elogios.png" style="width: 100%">
+               </md-button>
            </div>
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(3)">Xingamentos</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(3)" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/xingamentos.png" style="width: 100%">
+               </md-button>
            </div>     
         </div>
 
         <div class="row"> 
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(4)">Boteco</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(4)" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/boteco.png" style="width: 100%">
+               </md-button>
            </div>
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(5)">Tradição</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(5)" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/tradicoes.png" style="width: 100%">
+               </md-button>
            </div>     
         </div>
 
         <div class="row"> 
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(6)">Expressões</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(6)" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/expressoes.png" style="width: 100%">
+               </md-button>
            </div>
            <div class="col col-50">
-               <md-button class="md-raised md-primary" ng-click="hc.openCategories(7)">Inapropriado</md-button>
+               <md-button class="md-raised md-primary" ng-click="hc.openCategories(7)" style="background-color: rgba(223, 247, 255, 255)">
+                  <img class="png-icon" src="img/inapropriado.png" style="width: 100%">
+               </md-button>
            </div>     
         </div>
       </md-card>
+      <br/>
+        
+      <md-card>
+          <div class="item item-text-wrap md-button" ng-click="hc.openAbout()" style="color: rgba(1, 87, 155, 255)">Sobre o Dicionário Manezês</div>
+      </md-card>
+      <br/>
         
     </ion-content>
   </ion-view>

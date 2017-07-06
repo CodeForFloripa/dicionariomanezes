@@ -11,7 +11,7 @@
       </label>
     </div>
     <md-list id="entries-list">
-      <md-list-item class="header" ng-if="sc.entry">
+      <md-list-item class="header color-bg" ng-if="sc.entry">
         Encontrados {{sc.entries.length}} verbetes relacionados a "{{sc.entry}}":
       </md-list-item>
       <md-list-item ng-repeat="e in sc.entries track by $index" ng-click="sc.openEntry(e)" class="entry">

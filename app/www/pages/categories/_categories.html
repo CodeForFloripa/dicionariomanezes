@@ -19,7 +19,7 @@
     
   <ion-list id="letter-picker">
     <ion-item ng-repeat="l in cc.letters track by $index" ng-click="cc.reloadEntries(l)">
-        <span md-ripple>{{l | uppercase}}</span>
+        <span md-ripple style="background-color: rgba(1, 87, 155, 255)">{{l | uppercase}}</span>
     </ion-item>
   </ion-list>
 

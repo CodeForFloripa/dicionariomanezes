@@ -8,6 +8,7 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="lib/angular-material/angular-material.css" rel="stylesheet">
+    <link href="lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
 
@@ -27,6 +28,7 @@
 
     <!-- your app's js -->
     <script src="app.js"></script>
+    <script src="pages/about/about.js"></script>
     <script src="pages/entry/entry.js"></script>
     <script src="pages/search/search.js"></script>
     <script src="pages/home/home.js"></script>
@@ -39,10 +41,42 @@
   </head>
 
   <body ng-app="diciomane">
+<!--    <ion-nav-bar class="color-bar">-->
+<!--
     <ion-nav-bar class="bar-positive">
+        <img src="img/icon.png" style="width:304px; height:228px;">
+    <ion-nav-bar style="background-color: rgba(1, 87, 155, 255)">
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
+
+-->
+      
+    <ion-header-bar align-title="center">
+      <img class="title-image" src="img/logo-bar.png" width="1040px" height="100%"/>
+<!--     <search-bar ng-model="search"></search-bar>-->
+    </ion-header-bar>  
+      
+      
+<!--      <ion-header-bar class="bar bar-subheader">-->
+<!--
+          <md-card>
+          <input type="search" placeholder=" Buscar" ng-model="search" ng-focus="searchFocused = true" ng-blur="searchFocused = false" ng-change="scrollTop()" size="50%">
+          </md-card>
+-->
+<!--
+        <md-card>
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder=" Buscar um verbete ou significado" ng-click="hc.openSearch()" size="80%">
+          </label>
+        </md-card>
+-->
+    
+<!--      </ion-header-bar>-->
+    
+      
+<!--      <ion-view title='<img class="title-image" src="img/logo-bar.png" />'></ion-view>-->
 
     <ion-nav-view></ion-nav-view>
   </body>

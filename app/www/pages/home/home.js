@@ -36,6 +36,10 @@ angular.module('diciomane.pages.home', ['utils.localstorage'])
       ctrl.openCategories = function(categoriesID) {
         $state.go('categories', {id: categoriesID})
       }
+      
+      ctrl.openAbout = function() {
+        $state.go('about')
+      }
   
     }
   ]);
