@@ -1,26 +1,26 @@
-<ion-view view-title="Dicionário: {{dc.letter | uppercase}}" page="Dictionary" ng-controller="DictionaryCtrl as dc">
+<!--<ion-view view-title="Dicionário: {{dc.letter | uppercase}}" page="Dictionary" ng-controller="DictionaryCtrl as dc">-->
+<ion-view view-title="<div class='main-title' style='line-height:1.6;'>Dicionário: {{dc.letter | uppercase}}</div>
+                 <div class='sub-title' style='line-height:0.6; font-size:12px; color:white;'>Dicionário Manezês</div>" 
+                 page="Dictionary" ng-controller="DictionaryCtrl as dc">    
+  
   <ion-content>
     <md-list id="entries-list">
-
-      <md-list-item
-        ng-repeat="e in dc.words track by $index"
-        ng-click="dc.openEntry(e)"
-        class="entry"
-        >
+      
+      <md-list-item ng-if="dc.emptyEntry" class="entry">
+        <div class="title"> Nenhum verbete encontrado.</div>
+      </md-list-item>    
+      
+      <md-list-item ng-repeat="e in dc.words track by $index" ng-click="dc.openEntry(e)" class="entry">
         <div class="title">{{e.entry}}</div>
         <div class="meaning">{{e.meaning | limitTo: 80}}</div>
-
       </md-list-item>
-
     </md-list>
-
   </ion-content>
 
-  <ion-list id="letter-picker">
-    <ion-item ng-repeat="l in dc.letters track by $index"
-      ng-click="dc.reloadEntries(l)"
-      >
-      <span md-ripple>{{l | uppercase}}</span>
-    </ion-item>
-  </ion-list>
+    <ion-list id="letter-picker">
+      <ion-item ng-repeat="l in dc.letters track by $index" ng-click="dc.reloadEntries(l)">
+        <span md-ripple style="background-color: rgba(1, 87, 155, 255)">{{l | uppercase}}</span>
+      </ion-item>
+    </ion-list>
+
 </ion-view>

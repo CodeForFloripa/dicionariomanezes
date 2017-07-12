@@ -3507,7 +3507,7 @@ ion-infinite-scroll {
 
 /* If you change these, change platform.scss as well */
 .has-header {
-  top: 44px; }
+  top: 80px; }
 
 .no-header {
   top: 0; }
@@ -4279,7 +4279,15 @@ a.subdued {
 .bar-header {
   top: 0;
   border-top-width: 0;
-  border-bottom-width: 1px; }
+  border-bottom-width: 1px; 
+  height: 80px !important;
+  background-color: rgba(223, 247, 255, 255);
+}
+
+/*input[type="search"]{line-height: 58px; height: 20px}*/
+
+/*.brading{ max-width: 500px;  width: 50%;  margin: 0 auto; display:block;}*/
+
   .bar-header.has-tabs-top {
     border-bottom-width: 0px;
     background-image: none; }
@@ -4304,8 +4312,10 @@ a.subdued {
   padding: 0; }
 
 .bar-subheader {
-  top: 44px;
-  height: 44px; }
+  top: 60px;
+  height: 44px;
+  background-color: rgba(223, 247, 255, 0);
+}
   .bar-subheader .title {
     height: 43px;
     line-height: 44px; }
@@ -9815,20 +9825,132 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-[page=Home] {
-  background-color: #EEEEEE; }
-  [page=Home] ion-content {
+.color-bar{
+   background-color: rgba(1, 87, 155, 255);
+   border-color:  rgba(1, 87, 155, 255);
+   color:white;
+};
+
+.has-header{
+  top:380px !important
+}
+
+[page=Home] ion-content {
     padding: 8px; }
-  [page=Home] button {
+[page=Home] button {
     width: 100%;
     margin: 0 0 8px; }
-  [page=Home] md-card {
+[page=Home] .md-card {
     margin: 0 0 8px; }
-  [page=Home] md-card-header {
-    background-color: #3F51B5;
+[page=Home] md-card-header {
+    background-color: rgba(1, 87, 155, 255);
     color: white;
     font-weight: bold;
     text-transform: uppercase; }
+[page=Home] table { width: 100%; }
+[page=Home] #date {
+    text-align: right;
+    color: white;
+    font-weight:normal;
+    text-transform:lowercase; }
+[page=Home] md-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none;
+  border: none;
+  outline: none;}
+[page=Home] #md-button-search {
+  color: #757575;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 15px;
+  text-align: left;
+  box-shadow: none;
+}
+[page=Home] #icon-box{
+      position: relative;
+      color: $black;
+      font-size: 24px;
+      height: 45px;
+      width: 45px;
+      padding: 5px;
+      top: 75px;
+      left: 30%;
+/*      display: inline-block;*/
+      border: 2px solid $black;
+      margin: 5px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-transition: all ease 0.5s;
+	      -moz-transition: all ease 0.5s;
+	         transition: all ease 0.5s;
+   }
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 13%;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px -0.8%;
+/*  border-radius: 50%;*/
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #00a0d1;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #0091ea;
+  color: white;
+}
+
+.fa-github {
+  background: #000000;
+  color: white;
+}
+
+.fa-slack {
+  background: #1a237e;
+  color: white;
+}
+
+.fa-trello {
+  background: #03a9f4;
+  color: white;
+}
+
+.fa-meetup {
+  background: #c8232c;
+  color: white;
+}
+
+.fa-gmail {
+  background: #c8232c;
+  color: white;
+}
+
+
+
+/*
+   .icon-box:hover {
+    box-shadow: inset 0 50px 0 0 $black;
+    color: $white;
+   }
+*/
+
+
 
 [page=Dictionary] #entries-list {
   margin-right: 60px; }
@@ -9849,34 +9971,36 @@ a.button {
       word-wrap: normal;
       text-align: justify;
       color: #AAA; }
-
+   
 [page=Dictionary] #letter-picker {
   position: absolute;
-  top: 44px;
+  top: 80px;
+  padding-bottom: 80px;
   right: 0;
-  width: 60px;
+  width: 51px;
   height: 100%;
   overflow-y: scroll; }
   [page=Dictionary] #letter-picker ion-item {
     text-align: center;
     border-width: 0px !important;
     border-bottom-color: none;
-    padding: 4px; }
+    padding: 1.5px; }
     [page=Dictionary] #letter-picker ion-item span {
       color: white;
+      font-size: 20px;
       display: block;
       background-color: #3F51B5;
       height: 48px;
       width: 48px;
       line-height: 48px;
-      border-radius: 50%; }
+      border-radius: 10%; }
 
 [page=Search] #entries-list .header {
   padding-bottom: 5px;
   padding-top: 5px;
   border-bottom: 1px solid #CCC;
   border-top: 1px solid #CCC;
-  background-color: #3f51b5;
+  background-color: rgba(1, 87, 155, 255);
   color: white;
   font-weight: bold; }
   [page=Search] #entries-list .header div {
@@ -9886,14 +10010,14 @@ a.button {
   margin-top: 8px;
   padding-bottom: 16px;
   border-bottom: 1px solid #CCC; }
-  [page=Search] #entries-list .entry div {
+[page=Search] #entries-list .entry div {
     display: block; }
-  [page=Search] #entries-list .entry .title {
+[page=Search] #entries-list .entry .title {
     font-size: 18px;
     line-height: 24px;
     font-weight: bold;
     margin-bottom: 4px; }
-  [page=Search] #entries-list .entry .meaning {
+[page=Search] #entries-list .entry .meaning {
     line-height: 20px;
     display: block;
     word-wrap: normal;

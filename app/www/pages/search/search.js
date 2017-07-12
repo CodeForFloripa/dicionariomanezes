@@ -1,6 +1,5 @@
 angular.module('diciomane.pages.search', [])
-  .controller('SearchCtrl', ['DictionarySvc', '$state', function(dictionary,
-    $state) {
+  .controller('SearchCtrl', ['DictionarySvc', '$state', function(dictionary, $state) {
     var ctrl = this;
     ctrl.entries = {};
     ctrl.entry = "";

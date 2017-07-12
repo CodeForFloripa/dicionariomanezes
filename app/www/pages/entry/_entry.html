@@ -1,19 +1,35 @@
-<ion-view view-title="Verbete" ng-controller="EntryCtrl as ec" page="Entry">
+<!--<ion-view view-title="Verbete" ng-controller="EntryCtrl as ec" page="Entry">-->
+<ion-view view-title="<div class='main-title' style='line-height:1.6;'>DicioMané</div>
+                      <div class='sub-title' style='line-height:0.6; font-size:12px; color:white;'>Verbete</div>"
+                      ng-controller="EntryCtrl as ec" page="Entry">
+    
   <ion-content>
     <md-card>
 
       <md-card-title>
-        <md-card-title-text><h1> {{ec.entry.entry}} </h1></md-card-title-text>
+        <md-card-title-text><h1> {{ec.entry.entry}} </h1></md-card-title-text>          
       </md-card-title>
 
       <md-card-content>
+        
+        <a class="button-positive" ng-click="ec.toggleFavorite(!ec.favorite)" >
+            <i class="button button-icon" ng-class="{'icon ion-ios-heart-outline' : !ec.favorite , 'icon ion-ios-heart' : ec.favorite}"></i>
+        </a>  
+       <!--        <a class="button button-icon icon ion-volume-medium"></a>-->
+        <br />
         {{ec.entry.meaning}}
         <br />
         <br />
-
+<!--
+        <hr/>
+        <br/>
         {{ec.entry.source}}
+-->
       </md-card-content>
-
+        <div class="item item-divider">
+           <h3>Referência: <a href="{{ec.entry.source}}" onclick="window.open(this.href, '_system', 'location=yes'); return false" class="link">{{ec.entry.source}}</a></h3>
+        </div>
+        
     </md-card>
 
   </ion-content>

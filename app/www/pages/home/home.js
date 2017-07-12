@@ -1,8 +1,10 @@
 angular.module('diciomane.pages.home', ['utils.localstorage'])
-  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage', 'WordOfTheDaySvc',
-    function($state, dictionary, $localStorage, wordOfTheDay) {
+  .controller('HomeCtrl', ['$state', 'DictionarySvc', '$localStorage', 'WordOfTheDaySvc', '$scope', '$filter', '$ionicLoading',
+    function($state, dictionary, $localStorage, wordOfTheDay, $scope, $filter, $ionicLoading) {
 
       var ctrl = this;
+        
+      $scope.date_pt_br = $filter('date')(Date.now(), "dd 'de' MMMM");
 
       wordOfTheDay(new Date())
         .then(function(e) {
@@ -14,11 +16,19 @@ angular.module('diciomane.pages.home', ['utils.localstorage'])
           id: entry.id
         })
       }
+      
+//      ctrl.showSpiner = function() {
+//        $ionicLoading.show({
+//            noBackdrop: false,
+//            template: '<ion-spinner class="spinner-positive" icon="ripple"></ion-spinner>',
+//            duration: 3000
+//        });
+//      };
 
       ctrl.openDictionary = function() {
-        $state.go('dictionary')
+        $state.go('dictionary');        
       }
-
+      
       ctrl.openSearch = function() {
         $state.go('search')
       }
@@ -27,32 +37,9 @@ angular.module('diciomane.pages.home', ['utils.localstorage'])
         $state.go('categories', {id: categoriesID})
       }
       
-      ctrl.openFavoritos = function() {
-        $state.go('favoritos')
+      ctrl.openAbout = function() {
+        $state.go('about')
       }
-      
-      ctrl.openElogios = function() {
-        $state.go('elogios')
-      }
-      
-      ctrl.openXingamentos = function() {
-        $state.go('xingamentos')
-      }
-      
-      ctrl.openBoteco = function() {
-        $state.go('boteco')
-      }
-      
-      ctrl.openTradicao = function() {
-        $state.go('tradicao')
-      }
-      
-      ctrl.openExpressoes = function() {
-        $state.go('expressoes')
-      }
-      
-      ctrl.openInapropriado = function() {
-        $state.go('inapropriado')
-      }
+  
     }
   ]);

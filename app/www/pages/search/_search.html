@@ -1,22 +1,23 @@
-<ion-view view-title="Busca" ng-controller="SearchCtrl as sc" page="Search">
+<!--<ion-view view-title="Buscar" ng-controller="SearchCtrl as sc" page="Search">-->
+<ion-view view-title="<div class='main-title' style='line-height: 1.6;'>DicioMané</div>
+                      <div class='sub-title' style='line-height: .6;font-size: 12px;color: white;'>Buscar</div>" 
+                      ng-controller="SearchCtrl as sc" page="Search">
+    
   <ion-content>
     <div class="list list-inset">
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Buscar um verbete ou significado" ng-keyup="sc.search()" ng-model="sc.entry">
-  </label>
-  </div>
-      <md-list id="entries-list">
-        <md-list-item class="header" ng-if="sc.entry">
-            Encontrados {{sc.entries.length}} verbetes relacionados a "{{sc.entry}}":
-        </md-list-item>
-        <md-list-item
-          ng-repeat="e in sc.entries track by $index"
-          ng-click="sc.openEntry(e)"
-          class="entry">
-          <div class="title">{{e.entry}}</div>
-          <div class="meaning">{{e.meaning | limitTo: 80}}</div>
-        </md-list-item>
-      </md-list>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar um verbete ou significado" ng-keyup="sc.search()" ng-model="sc.entry">
+      </label>
+    </div>
+    <md-list id="entries-list">
+      <md-list-item class="header color-bg" ng-if="sc.entry">
+        Encontrados {{sc.entries.length}} verbetes relacionados a "{{sc.entry}}":
+      </md-list-item>
+      <md-list-item ng-repeat="e in sc.entries track by $index" ng-click="sc.openEntry(e)" class="entry">
+        <div class="title">{{e.entry}}</div>
+        <div class="meaning">{{e.meaning | limitTo: 80}}</div>
+      </md-list-item>
+    </md-list>
   </ion-content>
 </ion-view>
