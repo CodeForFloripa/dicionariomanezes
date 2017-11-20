@@ -62118,6 +62118,9 @@ var DEFAULT_RENDER_BUFFER = 3;
 
 CollectionRepeatDirective.$inject = ['$ionicCollectionManager', '$parse', '$window', '$$rAF', '$rootScope', '$timeout'];
 function CollectionRepeatDirective($ionicCollectionManager, $parse, $window, $$rAF, $rootScope, $timeout) {
+//  var match = repeatExpr.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+as\s+([\s\S]+?))?(?:\s+track\s+by\s+([\s\S]+?))?\s*$/);
+  
+  
   return {
     restrict: 'A',
     priority: 1000,
@@ -62140,6 +62143,12 @@ function CollectionRepeatDirective($ionicCollectionManager, $parse, $window, $$r
 
     var repeatExpr = attr.collectionRepeat;
     var match = repeatExpr.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/);
+    var aliasAs = match[3]; // AC: Added this
+    // Alias test
+    if (aliasAs && (!/^[$a-zA-Z_][$a-zA-Z0-9_]*$/.test(aliasAs) || /^(null|undefined|this|\$index|\$first|\$middle|\$last|\$even|\$odd|\$parent|\$root|\$id)$/.test(aliasAs))) {
+      throw Error("alias " + aliasAs +" is invalid --- must be a valid JS identifier which is not a reserved name.");
+    }  
+      
     if (!match) {
       throw new Error("collection-repeat expected expression in form of '_item_ in " +
                       "_collection_[ track by _id_]' but got '" + attr.collectionRepeat + "'.");
@@ -62191,6 +62200,12 @@ function CollectionRepeatDirective($ionicCollectionManager, $parse, $window, $$r
         throw new Error("collection-repeat expected an array for '" + listExpr + "', " +
           "but got a " + typeof value);
       }
+        
+      // AC: Adding alias as from angular.js' ng-repeat
+      if (aliasAs) {
+        scope[aliasAs] = newValue;
+      }
+        
       // Wait for this digest to end before refreshing everything.
       scope.$$postDigest(function() {
         getRepeatManager().setData(data);

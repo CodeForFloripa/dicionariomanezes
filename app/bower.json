@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "angular-material": "^1.0.9",
-    "angular-aria": "^1.5.8",    
-    "ngCordova": "^0.1.27-alpha"
+    "angular-aria": "^1.5.8",
+    "ngCordova": "^0.1.27-alpha",
+    "ion-alpha-scroll": "^0.1.3"
   }
 }
