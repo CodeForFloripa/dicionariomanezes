@@ -1,4 +1,3 @@
-
 function DatabaseSvc($cordovaSQLite, $localStorage, $ionicPlatform, $q){
   var self = this;
   var _categories = null;
